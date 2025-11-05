@@ -11,7 +11,10 @@ const Layout = ({ children }) => {
     <div className="layout">
       <nav className="navbar">
         <div className="nav-container">
-          <h1 className="logo">Desafio PlanCorp</h1>
+          <div className="logo-container">
+            <img src="/logo.svg" alt="PlanCorp" className="logo-icon" />
+            <h1 className="logo">Desafio PlanCorp</h1>
+          </div>
           <div className="nav-links">
             <Link 
               to="/" 

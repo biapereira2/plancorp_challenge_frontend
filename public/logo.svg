@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo do gráfico -->
+  <rect x="2" y="2" width="28" height="28" rx="4" fill="#FB923C" opacity="0.1"/>
+  
+  <!-- Barras do gráfico (crescimento) -->
+  <rect x="6" y="22" width="2.5" height="6" fill="#FB923C" rx="1"/>
+  <rect x="10" y="18" width="2.5" height="10" fill="#FB923C" rx="1"/>
+  <rect x="14" y="14" width="2.5" height="14" fill="#FB923C" rx="1"/>
+  <rect x="18" y="10" width="2.5" height="18" fill="#FB923C" rx="1"/>
+  <rect x="22" y="6" width="2.5" height="22" fill="#FB923C" rx="1"/>
+  
+  <!-- Linha de tendência ascendente -->
+  <path d="M7.25 25 L11.25 21 L15.25 17 L19.25 13 L23.25 9" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Círculo representando participação/ação -->
+  <circle cx="24" cy="8" r="3" fill="#60A5FA"/>
+  <circle cx="24" cy="8" r="1.5" fill="white"/>
+</svg>
