@@ -93,6 +93,16 @@ const Home = () => {
   .sort((a, b) => b.percentualTotal - a.percentualTotal)
   .slice(0, 3);
 
+  const pieChartData = empresas.map(empresa => {
+    const participacoesEmpresa = participacoes.filter(p => p.empresa === empresa.id);
+    const totalPercentual = participacoesEmpresa.reduce((sum, p) => sum + parseFloat(p.percentual), 0);
+    return {
+      nome: empresa.nome,
+      percentual: totalPercentual,
+    };
+  })
+  .filter(item => item.percentual > 0);
+
   const COLORS = ['#3B82F6', '#FBBF24', '#2563EB', '#F59E0B', '#60A5FA'];
 
   return (
@@ -150,22 +160,22 @@ const Home = () => {
 
             {(() => {
               const chartDataFiltrado = chartDataPorEmpresa.filter(item => item.percentual > 0);
-              return chartDataFiltrado.length > 0 && (
+              return pieChartData.length > 0 && (
                 <div className="chart-card chart-card-pie">
                   <h2>Distribuição de Participações</h2>
                   <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
                       <Pie
-                        data={chartDataFiltrado}
+                        data={pieChartData}
                         cx="50%"
                         cy="50%"
                         labelLine={false}
-                        label={({ nome, percentual }) => `${nome}: ${percentual}%`}
+                        label={({ nome, percentual }) => `${nome}: ${percentual.toFixed(0)}%`}
                         outerRadius={80}
                         fill="#8884d8"
                         dataKey="percentual"
                       >
-                        {chartDataFiltrado.map((entry, index) => (
+                        {pieChartData.map((entry, index) => (
                           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         ))}
                       </Pie>
