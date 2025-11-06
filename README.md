@@ -1,16 +1,65 @@
-# React + Vite
+# 🏢 Projeto Plancorp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação desenvolvida com **Django REST Framework** (backend) e **React** (frontend) para o gerenciamento de **acionistas**, **empresas** e **participações acionárias**.  
+O sistema permite o cadastro, edição e exclusão de acionistas e empresas, além do registro de compras de ações entre eles.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
 
-## React Compiler
+### **Frontend:**
+- [React](https://react.dev/)
+- [Axios](https://axios-http.com/)
+- [Vite](https://vitejs.dev/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Dashboard interativo:**  
+  Exibe estatísticas gerais das empresas, acionistas e participações em tempo real.  
+
+- **Gestão de empresas:**  
+  Permite **criar, editar e excluir** empresas diretamente pela interface.  
+
+- **Gestão de acionistas:**  
+  Permite **criar, editar e excluir** acionistas cadastrados.  
+
+- **Registro de participações:**  
+  É possível registrar a **compra de ações** por acionistas e acompanhar a **distribuição percentual** de cada empresa.  
+
+- **Visualização de dados em gráficos:**  
+  Utiliza **Recharts** para gerar visualizações amigáveis e intuitivas dos dados (como percentual de participações, total de acionistas e distribuição por empresa).  
+
+- **Design responsivo:**  
+  A interface foi projetada para se adaptar automaticamente a **qualquer dispositivo**, oferecendo uma navegação fluida tanto em **computadores** quanto em **smartphones**.
+
+---
+
+## 🧠 Integração com o Backend
+
+O frontend consome os endpoints da API Django REST para exibir e manipular os dados de:
+
+- Empresas (`/empresa/empresas/`)
+- Acionistas (`/acionista/acionistas/`)
+- Participações (`/participacao/participacoes/`)
+
+As requisições são feitas via **Axios**, e os dados retornados alimentam os componentes de listagem, formulários e gráficos interativos.
+
+---
+
+## 💻 Como Executar o Projeto
+
+1. Certifique-se de que o backend (Django) esteja rodando.
+2. No terminal, acesse o diretório do frontend:
+ ```bash
+ cd frontend
+ ```
+3. Instale as dependências:
+```bash
+npm install
+```
+4. Execute o projeto:
+```bash
+npm run dev
+```
