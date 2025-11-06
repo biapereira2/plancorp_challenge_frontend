@@ -112,7 +112,7 @@ const Home = () => {
         <>
           <div className="charts-grid">
             <div className="chart-card">
-              <h2>Participações por Empresa</h2>
+              <h2>Empresas com maior percentual vendido</h2>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartDataPorEmpresa}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -131,7 +131,7 @@ const Home = () => {
             </div>
 
             <div className="chart-card">
-              <h2>Número de Participações por Acionista</h2>
+              <h2>Acionistas que mais compraram ações</h2>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartDataPorAcionista}>
                   <CartesianGrid strokeDasharray="3 3" />
