@@ -116,7 +116,11 @@ const Home = () => {
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartDataPorEmpresa}>
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="nome" />
+                  <XAxis dataKey="nome" 
+                    interval={0} 
+                    angle={-30} 
+                    textAnchor="end" 
+                    height={70}/>
                   <YAxis />
                   <Tooltip />
                   <Legend />
@@ -131,7 +135,11 @@ const Home = () => {
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={chartDataPorAcionista}>
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="nome" />
+                  <XAxis dataKey="nome" 
+                    interval={0} 
+                    angle={-30} 
+                    textAnchor="end" 
+                    height={70}/>
                   <YAxis />
                   <Tooltip />
                   <Legend />
