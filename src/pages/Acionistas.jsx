@@ -9,11 +9,7 @@ const Acionistas = () => {
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
     const [editingId, setEditingId] = useState(null);
-    const [formData, setFormData] = useState({
-    nome: '',
-    cpf: '',
-    email: '',
-    });
+    const [formData, setFormData] = useState({ nome: '', cpf: '', email: '' });
     const [error, setError] = useState('');
 
     useEffect(() => {
@@ -48,9 +44,10 @@ const Acionistas = () => {
         await loadAcionistas();
         handleCloseModal();
         } catch (error) {
-        const errorMessage = error.response?.data?.error || 
-                            Object.values(error.response?.data || {}).flat().join(', ') ||
-                            'Erro ao salvar acionista';
+        const errorMessage =
+            error.response?.data?.error ||
+            Object.values(error.response?.data || {}).flat().join(', ') ||
+            'Erro ao salvar acionista';
         setError(errorMessage);
         }
     };
@@ -175,7 +172,9 @@ const Acionistas = () => {
                     <input
                     type="text"
                     value={formData.nome}
-                    onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                    onChange={(e) =>
+                        setFormData({ ...formData, nome: e.target.value })
+                    }
                     required
                     />
                 </div>
@@ -184,7 +183,12 @@ const Acionistas = () => {
                     <input
                     type="text"
                     value={formData.cpf}
-                    onChange={(e) => setFormData({ ...formData, cpf: e.target.value.replace(/\D/g, '') })}
+                    onChange={(e) =>
+                        setFormData({
+                        ...formData,
+                        cpf: e.target.value.replace(/\D/g, ''),
+                        })
+                    }
                     maxLength={11}
                     required
                     placeholder="00000000000"
@@ -195,12 +199,18 @@ const Acionistas = () => {
                     <input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                     />
                 </div>
                 <div className="form-actions">
-                    <button type="button" className="btn-secondary" onClick={handleCloseModal}>
+                    <button
+                    type="button"
+                    className="btn-secondary"
+                    onClick={handleCloseModal}
+                    >
                     Cancelar
                     </button>
                     <button type="submit" className="btn-primary">
@@ -216,4 +226,3 @@ const Acionistas = () => {
 };
 
 export default Acionistas;
-
