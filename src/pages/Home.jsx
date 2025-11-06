@@ -68,7 +68,6 @@ const Home = () => {
     setError('');
   };
 
-  // Preparar dados para gráficos
   const chartDataPorEmpresa = empresas.map(empresa => {
     const participacoesEmpresa = participacoes.filter(p => p.empresa === empresa.id);
     const totalPercentual = participacoesEmpresa.reduce((sum, p) => sum + parseFloat(p.percentual), 0);
@@ -77,7 +76,9 @@ const Home = () => {
       percentual: totalPercentual,
       disponivel: 100 - totalPercentual,
     };
-  });
+  })
+  .sort((a, b) => b.percentual - a.percentual)
+  .slice(0, 3);
 
   const chartDataPorAcionista = acionistas.map(acionista => {
     const participacoesAcionista = participacoes.filter(p => p.acionista === acionista.id);
@@ -88,7 +89,9 @@ const Home = () => {
       participacoes: totalParticipacoes,
       percentualTotal: totalPercentual,
     };
-  });
+  })
+  .sort((a, b) => b.percentualTotal - a.percentualTotal)
+  .slice(0, 3);
 
   const COLORS = ['#3B82F6', '#FBBF24', '#2563EB', '#F59E0B', '#60A5FA'];
 
